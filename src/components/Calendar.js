@@ -123,19 +123,19 @@ function Calendar() {
   };
 
   return (
-    <div className="bg-gray-900 text-gray-200 min-h-screen">
+    <div className="bg-[#16181a] text-gray-200 min-h-screen">
       {/* Header Section */}
-      <header className="bg-gray-800 py-4 px-6 shadow-lg">
+      <header className="bg-[#212529] py-4 px-6 shadow-lg">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-4 md:mb-0">
-            <h1 className="text-2xl font-bold text-blue-400">Shift Scheduler</h1>
+            {/* Removed 'Schedule' text */}
           </div>
           
           <div className="flex flex-wrap gap-3">
             <div className="relative">
               <button 
                 id="locationDropdownBtn" 
-                className="flex items-center bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition"
+                className="flex items-center bg-[#343a40] hover:bg-[#495057] px-4 py-2 rounded-lg transition"
                 onClick={() => setIsLocationDropdownOpen(!isLocationDropdownOpen)}
               >
                 <FontAwesomeIcon icon={faStore} className="mr-2 text-blue-400" />
@@ -144,17 +144,17 @@ function Calendar() {
               </button>
               <div 
                 id="locationDropdown" 
-                className={`absolute z-10 mt-2 w-48 bg-gray-700 rounded-lg shadow-lg ${isLocationDropdownOpen ? '' : 'hidden'}`}
+                className={`absolute z-10 mt-2 w-48 bg-[#343a40] rounded-lg shadow-lg ${isLocationDropdownOpen ? '' : 'hidden'}`}
               >
-                <a href="#" className="block px-4 py-2 hover:bg-gray-600 rounded-t-lg">Downtown Location</a>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-600">Uptown Location</a>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-600 rounded-b-lg">Westside Location</a>
+                <a href="#" className="block px-4 py-2 hover:bg-[#495057] rounded-t-lg">Downtown Location</a>
+                <a href="#" className="block px-4 py-2 hover:bg-[#495057]">Uptown Location</a>
+                <a href="#" className="block px-4 py-2 hover:bg-[#495057] rounded-b-lg">Westside Location</a>
               </div>
             </div>
             
             <button 
               id="teamBtn" 
-              className="flex items-center bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition"
+              className="flex items-center bg-[#343a40] hover:bg-[#495057] px-4 py-2 rounded-lg transition"
               onClick={() => setIsTeamModalOpen(true)}
             >
               <FontAwesomeIcon icon={faUsers} className="mr-2 text-green-400" />
@@ -176,40 +176,40 @@ function Calendar() {
       {/* Calendar Navigation */}
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center mb-6">
-          <button className="flex items-center bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition">
+          <button className="flex items-center bg-[#343a40] hover:bg-[#495057] px-4 py-2 rounded-lg transition">
             <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
             Previous Week
           </button>
           
           <h2 className="text-xl font-semibold">June 11 - June 17, 2023</h2>
           
-          <button className="flex items-center bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition">
+          <button className="flex items-center bg-[#343a40] hover:bg-[#495057] px-4 py-2 rounded-lg transition">
             Next Week
             <FontAwesomeIcon icon={faChevronRight} className="ml-2" />
           </button>
         </div>
 
         {/* Calendar Grid */}
-        <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden mb-8">
-          <div className="grid grid-cols-7 gap-px bg-gray-700">
+        <div className="bg-[#1e2024] rounded-xl shadow-lg overflow-hidden mb-8">
+          <div className="grid grid-cols-7 gap-px bg-[#212529]">
             {/* Day Headers */}
-            <div className="bg-gray-800 p-3 text-center font-medium">Sunday</div>
-            <div className="bg-gray-800 p-3 text-center font-medium">Monday</div>
-            <div className="bg-gray-800 p-3 text-center font-medium">Tuesday</div>
-            <div className="bg-gray-800 p-3 text-center font-medium">Wednesday</div>
-            <div className="bg-gray-800 p-3 text-center font-medium">Thursday</div>
-            <div className="bg-gray-800 p-3 text-center font-medium">Friday</div>
-            <div className="bg-gray-800 p-3 text-center font-medium">Saturday</div>
+            <div className="bg-[#1e2024] p-3 text-center font-medium">Sunday</div>
+            <div className="bg-[#1e2024] p-3 text-center font-medium">Monday</div>
+            <div className="bg-[#1e2024] p-3 text-center font-medium">Tuesday</div>
+            <div className="bg-[#1e2024] p-3 text-center font-medium">Wednesday</div>
+            <div className="bg-[#1e2024] p-3 text-center font-medium">Thursday</div>
+            <div className="bg-[#1e2024] p-3 text-center font-medium">Friday</div>
+            <div className="bg-[#1e2024] p-3 text-center font-medium">Saturday</div>
             
             {/* Day Cells */}
-            <div className="bg-gray-800 p-3 drop-zone min-h-40" data-day="sunday">
+            <div className="bg-[#1e2024] p-3 drop-zone min-h-40" data-day="sunday">
               <div className="shift-card draggable" draggable="true" style={{...styles.shiftCard, ...styles.pastelBlue, padding: '0.5rem', marginBottom: '0.5rem', borderRadius: '0.5rem', cursor: 'move'}}>
                 <div className="font-medium">John D.</div>
                 <div className="text-xs">8:00 AM - 4:00 PM</div>
               </div>
             </div>
             
-            <div className="bg-gray-800 p-3 drop-zone min-h-40" data-day="monday">
+            <div className="bg-[#1e2024] p-3 drop-zone min-h-40" data-day="monday">
               <div className="shift-card draggable" draggable="true" style={{...styles.shiftCard, ...styles.pastelGreen, padding: '0.5rem', marginBottom: '0.5rem', borderRadius: '0.5rem', cursor: 'move'}}>
                 <div className="font-medium">Sarah M.</div>
                 <div className="text-xs">9:00 AM - 5:00 PM</div>
@@ -220,35 +220,35 @@ function Calendar() {
               </div>
             </div>
             
-            <div className="bg-gray-800 p-3 drop-zone min-h-40" data-day="tuesday">
+            <div className="bg-[#1e2024] p-3 drop-zone min-h-40" data-day="tuesday">
               <div className="shift-card draggable" draggable="true" style={{...styles.shiftCard, ...styles.pastelPurple, padding: '0.5rem', marginBottom: '0.5rem', borderRadius: '0.5rem', cursor: 'move'}}>
                 <div className="font-medium">Emma L.</div>
                 <div className="text-xs">10:00 AM - 6:00 PM</div>
               </div>
             </div>
             
-            <div className="bg-gray-800 p-3 drop-zone min-h-40" data-day="wednesday">
+            <div className="bg-[#1e2024] p-3 drop-zone min-h-40" data-day="wednesday">
               <div className="shift-card draggable" draggable="true" style={{...styles.shiftCard, ...styles.pastelYellow, padding: '0.5rem', marginBottom: '0.5rem', borderRadius: '0.5rem', cursor: 'move'}}>
                 <div className="font-medium">Alex K.</div>
                 <div className="text-xs">7:00 AM - 3:00 PM</div>
               </div>
             </div>
             
-            <div className="bg-gray-800 p-3 drop-zone min-h-40" data-day="thursday">
+            <div className="bg-[#1e2024] p-3 drop-zone min-h-40" data-day="thursday">
               <div className="shift-card draggable" draggable="true" style={{...styles.shiftCard, ...styles.pastelBlue, padding: '0.5rem', marginBottom: '0.5rem', borderRadius: '0.5rem', cursor: 'move'}}>
                 <div className="font-medium">John D.</div>
                 <div className="text-xs">8:00 AM - 4:00 PM</div>
               </div>
             </div>
             
-            <div className="bg-gray-800 p-3 drop-zone min-h-40" data-day="friday">
+            <div className="bg-[#1e2024] p-3 drop-zone min-h-40" data-day="friday">
               <div className="shift-card draggable" draggable="true" style={{...styles.shiftCard, ...styles.pastelGreen, padding: '0.5rem', marginBottom: '0.5rem', borderRadius: '0.5rem', cursor: 'move'}}>
                 <div className="font-medium">Sarah M.</div>
                 <div className="text-xs">9:00 AM - 5:00 PM</div>
               </div>
             </div>
             
-            <div className="bg-gray-800 p-3 drop-zone min-h-40" data-day="saturday">
+            <div className="bg-[#1e2024] p-3 drop-zone min-h-40" data-day="saturday">
               <div className="shift-card draggable" draggable="true" style={{...styles.shiftCard, ...styles.pastelPink, padding: '0.5rem', marginBottom: '0.5rem', borderRadius: '0.5rem', cursor: 'move'}}>
                 <div className="font-medium">Mike T.</div>
                 <div className="text-xs">12:00 PM - 8:00 PM</div>
